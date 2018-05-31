@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "g2.com.jawampaandroid"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    packagingOptions {
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'META-INF/LICENSE'
+//        exclude 'META-INF/LICENSE.txt'
+//        exclude 'META-INF/license.txt'
+//        exclude 'META-INF/NOTICE'
+//        exclude 'META-INF/NOTICE.txt'
+//        exclude 'META-INF/notice.txt'
+//        exclude 'META-INF/ASL2.0'
+//        exclude 'META-INF/INDEX.LIST'
+//        exclude 'META-INF/io.netty.versions.properties'
+//    }
+
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+    //compile group: 'ws.wamp.jawampa', name: 'jawampa-core', version: '0.5.0'
+    compile group: 'ws.wamp.jawampa', name: 'jawampa-netty', version: '0.4.1'
+    //compile 'io.reactivex:rxandroid:0.24.0'
+
+
+    //implementation 'io.crossbar.autobahn:autobahn-android:18.5.1'
+
+    //compile 'com.neovisionaries:nv-websocket-client:2.4'
+
+    /*
+    implementation files('libs/jawampa/jackson-annotations-2.4.0.jar')
+    implementation files('libs/jawampa/jackson-core-2.4.4.jar')
+    implementation files('libs/jawampa/jackson-databind-2.4.4.jar')
+    implementation files('libs/jawampa/jackson-dataformat-msgpack-0.7.0-p7.jar')
+    implementation files('libs/jawampa/jawampa-core-0.5.0.jar')
+    implementation files('libs/jawampa/jawampa-netty-0.5.0.jar')
+    implementation files('libs/jawampa/msgpack-core-0.7.0-p7.jar')
+    implementation files('libs/jawampa/netty-buffer-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-codec-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-codec-http-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-common-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-handler-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-resolver-4.1.11.Final.jar')
+    implementation files('libs/jawampa/netty-transport-4.1.11.Final.jar')
+    implementation files('libs/jawampa/rxjava-1.0.8.jar')
+
+
+    */
+}
